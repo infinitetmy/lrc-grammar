@@ -1,6 +1,6 @@
 parser grammar LRCMixedParser;
 
-options { tokenVocab = LRCExtendLexer; }
+options { tokenVocab = LRCMixedLexer; }
 
 lrcFile
     : NEWLINE* idSection? timeSection? EOF
