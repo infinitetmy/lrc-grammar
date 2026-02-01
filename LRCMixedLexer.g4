@@ -234,8 +234,12 @@ mode MODE_POST_SUB_TIME_TAG;
         : '<' -> type(SUB_TIME_TAG_OPEN), popMode, pushMode(MODE_SUB_TIME_TAG_START)
         ;
 
+    POST_SUB_TIME_CLOSE
+        : '>' -> type(SUB_TIME_TAG_CLOSE)
+        ;
+
     WORD_LYRICS_CONTENT
-        : ~[\r\n<] ~[\r\n<]* -> type(LYRICS_TEXT)
+        : ~[>\r\n<] ~[>\r\n<]* -> type(LYRICS_TEXT)
         ;
 
     WORD_NEWLINE
