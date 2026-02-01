@@ -29,7 +29,12 @@ idValue
     ;
 
 wordLevelTimeLine
-    : timeTag SPACE* subtimeTag (lyrics subtimeTag)*
+    : timeTag SPACE* subtimeTag 
+      (
+        (lyrics subtimeTag)*
+        |
+        (lyrics subtimeTag)+ lyrics
+      )
     ;
 
 lineLevelTimeLine
